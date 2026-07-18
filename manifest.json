@@ -1,0 +1,10 @@
+{
+  "name": "Life Board",
+  "short_name": "LifeBoard",
+  "description": "やること・夢・目標を、ひとつの場所に",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f1ec",
+  "theme_color": "#c45c26",
+  "lang": "ja"
+}

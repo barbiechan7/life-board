@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Board — やること・夢・目標をひとつに</title>
+  <meta name="description" content="やること・夢・目標・メモ・やりたいことを、ひとつのアプリで管理する個人用Life Board。" />
+  <meta name="theme-color" content="#c45c26" />
+  <meta property="og:title" content="Life Board" />
+  <meta property="og:description" content="やること・夢・目標を、ひとつの場所に。" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>Life Board</h1>
+        <p>やること・夢・目標を、ひとつの場所に</p>
+      </div>
+      <nav class="nav-list" id="nav" aria-label="カテゴリ"></nav>
+      <div class="sidebar-actions">
+        <button class="primary-btn" id="btn-new">＋ 新規追加</button>
+        <button class="ghost-btn" id="btn-export">エクスポート</button>
+        <button class="ghost-btn" id="btn-import">インポート</button>
+        <input type="file" accept="application/json" id="file-import" class="hidden" />
+      </div>
+    </aside>
+    <main class="main" id="main"></main>
+  </div>
+
+  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <h3 id="modal-title">新規追加</h3>
+      <form class="form-grid" id="form">
+        <label>タイトル *<input type="text" id="f-title" required placeholder="例: 副業の第一歩を踏み出す" /></label>
+        <label>詳細・メモ<textarea id="f-desc" placeholder="なぜ大切か、具体的なステップなど"></textarea></label>
+        <div class="form-row" id="f-extra"></div>
+        <label>タグ（カンマ区切り）<input type="text" id="f-tags" placeholder="副業, 2026, 健康" /></label>
+        <label class="pin-label">
+          <input type="checkbox" id="f-pinned" /> ピン留めして上に表示
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="ghost-btn" id="btn-cancel">キャンセル</button>
+          <button type="submit" class="primary-btn">保存</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
